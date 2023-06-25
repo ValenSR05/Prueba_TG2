@@ -17,28 +17,28 @@
   <script src="https://js.arcgis.com/4.27/"></script>
 
   <script>
-    <!- Se importan los módulos requeridos ->
+    //Se importan los módulos requeridos
     require([
       "esri/config",
       "esri/WebScene",
       "esri/views/SceneView",
       "esri/widgets/Legend"
   ], function(esriConfig, WebScene, SceneView, Legend) {
-    <!- Clave API para acceder al mapa base y servicios de ubicacion ->
+    //Clave API para acceder al mapa base y servicios de ubicacion
     esriConfig.apiKey = "AAPK404e130eec654108b5de79309118950aonPR63_93tyPAglJhoqDs3NRhIjEnSg7XwKelx-17CJEjWJpX1DqN9hkhqdLWetW";
 
     const webscene = new WebScene({
         portalItem: {
-          <!- ID de la escena 3D ->
+          //ID de la escena 3D
           id: "e2e6cd326c3c4aa38097c8d8b2fb3622"
         }
       });
-      <!- Se crea la vista de escena 3D ->
+      // Se crea la vista de escena 3D 
       const view = new SceneView({
         container: "viewDiv",
         map: webscene
       });
-      <!- Se crea el widget de leyenda ->
+      // Se crea el widget de leyenda 
       const legend = new Legend ({
         view:view
       });
