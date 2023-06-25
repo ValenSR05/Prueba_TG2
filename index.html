@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>ArcGIS Maps SDK for JavaScript Tutorials: Display a scene</title>
+  <style>
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.27/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.27/"></script>
+
+  <script>
+    require([
+      "esri/config",
+      "esri/WebScene",
+      "esri/views/SceneView",
+      "esri/widgets/Legend"
+  ], function(esriConfig, WebScene, SceneView, Legend) {
+
+    esriConfig.apiKey = "AAPK404e130eec654108b5de79309118950aonPR63_93tyPAglJhoqDs3NRhIjEnSg7XwKelx-17CJEjWJpX1DqN9hkhqdLWetW";
+
+    const webscene = new WebScene({
+        portalItem: {
+          id: "e2e6cd326c3c4aa38097c8d8b2fb3622"
+        }
+      });
+      
+      const view = new SceneView({
+        container: "viewDiv",
+        map: webscene
+      });
+      
+      const legend = new Legend ({
+        view:view
+      });
+
+      view.ui.add(legend, "top-right");
+
+    });
+  </script>
+
+</head>
+<body>
+  <div id="viewDiv"></div>
+</body>
+</html>
