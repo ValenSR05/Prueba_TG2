@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>ArcGIS Maps SDK for JavaScript Tutorials: Display a scene</title>
+  <title>Catastro 3D y SLO</title>
   <style>
     html, body, #viewDiv {
       padding: 0;
@@ -17,6 +17,7 @@
   <script src="https://js.arcgis.com/4.27/"></script>
 
   <script>
+    <!- Se importan los módulos requeridos ->
     require([
       "esri/config",
       "esri/WebScene",
@@ -28,15 +29,16 @@
 
     const webscene = new WebScene({
         portalItem: {
+          <!- ID de la escena 3D ->
           id: "e2e6cd326c3c4aa38097c8d8b2fb3622"
         }
       });
-      
+      <!- Se crea la vista de escena 3D ->
       const view = new SceneView({
         container: "viewDiv",
         map: webscene
       });
-      
+      <!- Se crea el widget de leyenda ->
       const legend = new Legend ({
         view:view
       });
